@@ -231,6 +231,12 @@ void GlContext::globalCleanup()
 
 
 ////////////////////////////////////////////////////////////
+void GlContext::ensureContext()
+{
+}
+
+
+////////////////////////////////////////////////////////////
 void GlContext::acquireTransientContext()
 {
     // If a capable context is already active on this thread
