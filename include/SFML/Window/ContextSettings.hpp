@@ -49,6 +49,9 @@ struct ContextSettings
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
+    /// Note: If a context is created without stencil bits then clipping masks
+    /// will fail to work.
+    ///
     /// \param depth        Depth buffer bits
     /// \param stencil      Stencil buffer bits
     /// \param antialiasing Antialiasing level
@@ -58,7 +61,7 @@ struct ContextSettings
     /// \param sRgb         sRGB capable framebuffer
     ///
     ////////////////////////////////////////////////////////////
-    explicit ContextSettings(unsigned int depth = 0, unsigned int stencil = 0, unsigned int antialiasing = 0, unsigned int major = 1, unsigned int minor = 1, unsigned int attributes = Default, bool sRgb = false) :
+    explicit ContextSettings(unsigned int depth = 0, unsigned int stencil = 8, unsigned int antialiasing = 0, unsigned int major = 2, unsigned int minor = 1, unsigned int attributes = Default, bool sRgb = false) :
     depthBits        (depth),
     stencilBits      (stencil),
     antialiasingLevel(antialiasing),
